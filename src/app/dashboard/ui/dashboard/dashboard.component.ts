@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShowService } from '../../data-access/show.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private showService:ShowService) { }
 
   ngOnInit(): void {
+      this.showService.testQuery().subscribe(
+        (shows) => {
+          console.log(shows);
+        }
+      )
   }
 
 }
