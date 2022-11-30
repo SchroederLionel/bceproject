@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Show } from 'src/app/models/show.model';
 import { ShowService } from '../../data-access/show.service';
 
 @Component({
@@ -10,12 +12,10 @@ export class DashboardComponent implements OnInit {
 
   constructor(private showService:ShowService) { }
 
+  shows$? : Observable<Show[]>;
+
   ngOnInit(): void {
-      this.showService.testQuery().subscribe(
-        (shows) => {
-          console.log(shows);
-        }
-      )
+    this.shows$ = this.showService.shows$;
   }
 
 }
