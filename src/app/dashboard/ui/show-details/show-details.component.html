@@ -1,3 +1,5 @@
+<app-series></app-series>
+
 <div class="container2" *ngIf="casters$ | async as casts; else loading">
   <ul class="ul-list">
     <li *ngFor="let cast of casts">

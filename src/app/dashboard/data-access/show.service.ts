@@ -40,9 +40,13 @@ export class ShowService {
       value => {
         if(typeof value  === 'number'){
           return this.getShows(value);
-         }else {
-           return this.getForSearch(value);
          }
+        if(value.length === 0) {
+          return this.getShows(1);
+        }
+        
+        return this.getForSearch(value);
+         
       }
     )
   );

@@ -10,6 +10,7 @@ import { SearchComponent } from './feature/search/search.component';
 import { FormsReactiveModule } from '../shared/form-reactive.module';
 import { ShowDetailsComponent } from './ui/show-details/show-details.component';
 import { ShowListComponent } from './ui/show-list/show-list.component';
+import { SeriesComponent } from './ui/series/series.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ShowListComponent } from './ui/show-list/show-list.component';
     SearchComponent,
     ShowDetailsComponent,
     ShowListComponent,
+    SeriesComponent,
   ],
   imports: [
     CommonModule,
