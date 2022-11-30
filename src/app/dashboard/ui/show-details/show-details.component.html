@@ -1,1 +1,17 @@
-<p>show-details works!</p>
+<div class="container" *ngIf="casters$ | async as casts; else loading">
+  <ul class="list">
+    <li *ngFor="let cast of casts">
+      <mat-card class="card">
+        <img
+          mat-card-image
+          class="show-image"
+          mat-card-image
+          src="{{ cast.person.image.medium }}"
+        />
+        <mat-card-footer> {{ cast.person.name }} </mat-card-footer>
+      </mat-card>
+    </li>
+  </ul>
+</div>
+
+<ng-template #loading> Loading </ng-template>

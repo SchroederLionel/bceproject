@@ -20,22 +20,14 @@ export interface Person {
     image: Image;
 }
 
-export interface Image2 {
-    medium: string;
-    original: string;
-}
-
-
-
 
 export interface Character {
     id: number;
     url: string;
     name: string;
-    image: Image2;
 }
 
-export interface RootObject {
+export interface CastMember {
     person: Person;
     character: Character;
     voice: boolean;

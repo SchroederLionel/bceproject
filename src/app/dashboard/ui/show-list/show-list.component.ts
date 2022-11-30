@@ -10,7 +10,7 @@ import { Show } from 'src/app/models/show.model';
 export class ShowListComponent implements OnInit {
   shows$? : Observable<Show[]>;
   constructor(private showService: ShowService) { }
-
+  
   ngOnInit(): void {
     this.shows$ = this.showService.shows$;
   }
