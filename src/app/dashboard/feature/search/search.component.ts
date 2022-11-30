@@ -20,8 +20,10 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit():void {
-    console.log(this.searchForm.value.queryTerm);
-
+    let term = this.searchForm.value.queryTerm;
+    if(term != undefined && term != null){
+      this.showService.search(term);
+    }
   }
 
 
