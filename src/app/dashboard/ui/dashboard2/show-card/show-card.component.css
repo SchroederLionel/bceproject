@@ -15,10 +15,17 @@
      display: flex;
      flex-wrap: wrap;
  }
+ a{
+    text-decoration: none; 
+ }
  mat-card-footer{
-     width: 100%;
+    margin: 0px !important;
      display: flex;
      justify-content: center;
      align-items: center;
+     height: 30px;
+    
+     width: 100%;
+    
  }
  
