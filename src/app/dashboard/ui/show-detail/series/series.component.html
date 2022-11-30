@@ -1,4 +1,8 @@
 <ng-container *ngIf="series$ | async as series" ;else loading>
+  <app-filter
+    [series]="constSeries"
+    (serie-number)="filter($event)"
+  ></app-filter>
   <ul class="ul-list">
     <li *ngFor="let serie of series">
       <div class="container">
@@ -13,7 +17,7 @@
               src="../../../../../assets/images/placeHolder.png"
             />
           </ng-container>
-          <mat-card-footer> {{ serie.season }} </mat-card-footer>
+          <mat-card-footer> {{ serie.name }} </mat-card-footer>
         </mat-card>
       </div>
     </li>

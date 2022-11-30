@@ -1,4 +1,8 @@
 <ng-container *ngIf="showId">
-  <app-series [showId]="showId"></app-series>
-  <app-show-cast-list [showId]="showId"></app-show-cast-list>
+  <div class="show-container">
+    <app-series [showId]="showId"></app-series>
+  </div>
+  <div class="cast-container">
+    <app-show-cast-list [showId]="showId"></app-show-cast-list>
+  </div>
 </ng-container>

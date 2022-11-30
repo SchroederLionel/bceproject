@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SeriesService } from '../../../data-access/series.service';
-import {Observable ,BehaviorSubject} from'rxjs';
+import {Observable ,map,tap} from'rxjs';
 import { Series } from 'src/app/models/series.model';
 
 @Component({
@@ -11,17 +11,31 @@ import { Series } from 'src/app/models/series.model';
 export class SeriesComponent implements OnInit {
 
   @Input("showId") showId!:number;
+
+  constSeries: Series[]=[];
+
   series$?: Observable<Series[]>;
 
-  filterBySeason$ = new BehaviorSubject<number>(1);
+ 
   constructor(private seriesService:SeriesService) { }
   
   ngOnInit(): void {
-    this.series$ = this.seriesService.getSeries(this.showId);
+    this.series$ = this.seriesService.getSeries(this.showId).pipe(
+      tap(series =>{
+        this.constSeries = series;
+      }),
+      map((series) => {
+        return this.constSeries.filter(serie =>serie.season == 1);
+      })
+    )
   }
 
-  search(){
-    
+  filter(value:number){
+    this.series$ =  this.series$!.pipe(
+      map((series) => {
+       return this.constSeries.filter(serie =>serie.season == value);
+      })
+    )
   }
 
 

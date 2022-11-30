@@ -12,6 +12,7 @@ import { ShowDetailsComponent } from './ui/show-detail/show-details/show-details
 import { ShowListComponent } from './ui/dashboard2/show-list/show-list.component';
 import { SeriesComponent } from './ui/show-detail/series/series.component';
 import { ShowCastListComponent } from './ui/show-detail/show-cast-list/show-cast-list.component';
+import { FilterComponent } from './ui/show-detail/filter/filter.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ShowCastListComponent } from './ui/show-detail/show-cast-list/show-cast
     ShowListComponent,
     SeriesComponent,
     ShowCastListComponent,
+    FilterComponent,
   ],
   imports: [
     CommonModule,

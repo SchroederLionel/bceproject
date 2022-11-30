@@ -1,0 +1,16 @@
+<div class="filter-content">
+  <mat-form-field class="search-form-field" floatLabel="always">
+    <mat-icon matPrefix>search</mat-icon>
+    <mat-label>Search</mat-label>
+
+    <mat-select
+      [(value)]="selected"
+      (selectionChange)="valueChanged($event.value)"
+      class="select"
+    >
+      <mat-option *ngFor="let value of howManySeries" value="{{ value }}"
+        >Series - {{ value }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+</div>
