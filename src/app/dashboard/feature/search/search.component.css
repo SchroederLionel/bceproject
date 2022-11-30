@@ -1,0 +1,12 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form-field-input {
+    width: 350px;
+ }
+ .margin-left{
+    margin-left: 20px;
+ }

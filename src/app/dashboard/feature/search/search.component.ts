@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { ShowService } from '../../data-access/show.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  term:string ='';
+  constructor(private showService: ShowService,private formBuilder: FormBuilder) { }
+
+  searchForm = this.formBuilder.group({
+    queryTerm : ''
+  });
 
   ngOnInit(): void {
   }
+
+  onSubmit():void {
+    console.log(this.searchForm.value.queryTerm);
+
+  }
+
+
 
 }

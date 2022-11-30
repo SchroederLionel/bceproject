@@ -1,1 +1,19 @@
-<p>search works!</p>
+<div class="content">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="search-form-field-input">
+      <mat-label>Search</mat-label>
+      <input
+        formControlName="queryTerm"
+        matInput
+        type="text"
+        placeholder="Search show"
+        class="input-field"
+        name="advanced-search"
+        class="input"
+      />
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary" class="margin-left">
+      Search
+    </button>
+  </form>
+</div>
