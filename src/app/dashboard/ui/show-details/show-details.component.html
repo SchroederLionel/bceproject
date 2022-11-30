@@ -1,15 +1,12 @@
-<div class="container" *ngIf="casters$ | async as casts; else loading">
+<div class="container2" *ngIf="casters$ | async as casts; else loading">
   <ul class="list">
     <li *ngFor="let cast of casts">
-      <mat-card class="card">
-        <img
-          mat-card-image
-          class="show-image"
-          mat-card-image
-          src="{{ cast.person.image.medium }}"
-        />
-        <mat-card-footer> {{ cast.person.name }} </mat-card-footer>
-      </mat-card>
+      <div class="container">
+        <mat-card class="card">
+          <img mat-card-image src="{{ cast.person.image.medium }}" />
+          <mat-card-footer> {{ cast.person.name }} </mat-card-footer>
+        </mat-card>
+      </div>
     </li>
   </ul>
 </div>
