@@ -1,0 +1,6 @@
+<app-search></app-search>
+<div *ngIf="shows$ | async as shows">
+  <div *ngFor="let show of shows" class="card-container">
+    <app-show-card [show]="show"></app-show-card>
+  </div>
+</div>

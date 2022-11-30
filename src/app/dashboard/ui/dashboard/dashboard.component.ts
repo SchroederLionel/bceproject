@@ -10,12 +10,12 @@ import { ShowService } from '../../data-access/show.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private showService:ShowService) { }
+  constructor() { }
 
-  shows$? : Observable<Show[]>;
+
 
   ngOnInit(): void {
-    this.shows$ = this.showService.shows$;
+   
   }
 
 }

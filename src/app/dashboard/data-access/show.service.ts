@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { BehaviorSubject,Subject ,mergeMap, Observable,merge,map } from 'rxjs';
 import { Show } from 'src/app/models/show.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,18 +38,17 @@ export class ShowService {
   ).pipe(
     mergeMap(
       value => {
-        console.log(value);
         if(typeof value  === 'number'){
           return this.getShows(value);
          }else {
-            console.log('get sadas')
            return this.getForSearch(value);
          }
       }
     )
   );
 
-
+    
+  
 
   private getShows(pageNumber:number): Observable<Show[]> {
    return  this.http.get<Show[]>(`${environment.api.baseUrl}/shows?page=${pageNumber}`);
@@ -56,6 +56,9 @@ export class ShowService {
 
   private getForSearch(term:string): Observable<Show[]> {
     return  this.http.get<Show>(`${environment.api.baseUrl}/singlesearch/shows?q=${term}`).pipe(map(show =>[show]))
-   }
+  }
+
+
+ 
 
 }
