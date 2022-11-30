@@ -13,26 +13,18 @@ import { Show } from 'src/app/models/show.model';
 })
 export class ShowDetailsComponent implements OnInit, OnDestroy {
  
-  constructor(private castService:CastService,private route:ActivatedRoute ) { }
+  constructor(private route:ActivatedRoute ) { }
   routeSubscription$?:Subscription;
-
   showId?: number;
-  
-  casters$? : Observable<CastMember[]>;
+
   ngOnInit(): void {
-    this.casters$ = this.castService.casting$;
     this.routeSubscription$ = this.route.paramMap.subscribe(
       (params:ParamMap) => {
         const showId = Number(params.get('id'));
-        this.showId = showId;
-        this.castService.getCast(showId);
+        this.showId = showId;  
       }
     );
-
-    this.castService.test().subscribe(value => console.log(value))
-
   }
-
 
   ngOnDestroy(): void {
     if (this.routeSubscription$) this.routeSubscription$.unsubscribe();

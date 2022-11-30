@@ -11,6 +11,7 @@ import { FormsReactiveModule } from '../shared/form-reactive.module';
 import { ShowDetailsComponent } from './ui/show-details/show-details.component';
 import { ShowListComponent } from './ui/show-list/show-list.component';
 import { SeriesComponent } from './ui/series/series.component';
+import { ShowCastListComponent } from './ui/show-cast-list/show-cast-list.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { SeriesComponent } from './ui/series/series.component';
     ShowDetailsComponent,
     ShowListComponent,
     SeriesComponent,
+    ShowCastListComponent,
   ],
   imports: [
     CommonModule,

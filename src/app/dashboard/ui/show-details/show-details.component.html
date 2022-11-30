@@ -1,18 +1,4 @@
 <ng-container *ngIf="showId">
   <app-series [showId]="showId"></app-series>
+  <app-show-cast-list [showId]="showId"></app-show-cast-list>
 </ng-container>
-
-<div class="container2" *ngIf="casters$ | async as casts; else loading">
-  <ul class="ul-list">
-    <li *ngFor="let cast of casts">
-      <div class="container">
-        <mat-card class="card">
-          <img mat-card-image src="{{ cast.person.image.medium }}" />
-          <mat-card-footer> {{ cast.person.name }} </mat-card-footer>
-        </mat-card>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<ng-template #loading> Loading </ng-template>
