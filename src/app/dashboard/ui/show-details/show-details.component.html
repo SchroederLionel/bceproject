@@ -1,4 +1,6 @@
-<app-series></app-series>
+<ng-container *ngIf="showId">
+  <app-series [showId]="showId"></app-series>
+</ng-container>
 
 <div class="container2" *ngIf="casters$ | async as casts; else loading">
   <ul class="ul-list">
