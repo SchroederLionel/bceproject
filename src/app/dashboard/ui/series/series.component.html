@@ -1,1 +1,12 @@
-<p>series works!</p>
+<ng-container *ngIf="series$ | async as series" ;else loading>
+  <ul class="ul-list">
+    <li *ngFor="let serie of series">
+      <div class="container">
+        <mat-card class="card">
+          <img mat-card-image src="{{ serie.image.medium }}" />
+          <mat-card-footer> {{ serie.season }} </mat-card-footer>
+        </mat-card>
+      </div>
+    </li>
+  </ul>
+</ng-container>
