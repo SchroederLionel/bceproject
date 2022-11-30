@@ -1,6 +1,11 @@
 <app-search></app-search>
-<div *ngIf="shows$ | async as shows">
-  <div *ngFor="let show of shows" class="card-container">
-    <app-show-card [show]="show"></app-show-card>
+<div *ngIf="shows$ | async as shows; else loading">
+  <div class="container">
+    <ul class="ul-list">
+      <li *ngFor="let show of shows">
+        <app-show-card [show]="show"></app-show-card>
+      </li>
+    </ul>
   </div>
 </div>
+<ng-template #loading> Loading </ng-template>

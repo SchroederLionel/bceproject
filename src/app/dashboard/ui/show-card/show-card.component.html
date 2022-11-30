@@ -1,11 +1,7 @@
 <a routerLink="{{ show.id }}">
-  <mat-card class="card">
-    <img
-      mat-card-image
-      class="show-image"
-      mat-card-image
-      src="{{ show.image.medium }}"
-      alt="Photo of a Shiba Inu"
-    />
-  </mat-card>
+  <div class="container">
+    <mat-card class="card">
+      <img mat-card-image src="{{ show.image.medium }}" />
+    </mat-card>
+  </div>
 </a>
