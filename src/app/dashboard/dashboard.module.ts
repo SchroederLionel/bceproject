@@ -4,14 +4,14 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MaterialModule } from '../shared/material/material.module';
 
-import { ShowCardComponent } from './ui/show-card/show-card.component';
-import { DashboardComponent } from './ui/dashboard/dashboard.component';
+import { ShowCardComponent } from './ui/dashboard2/show-card/show-card.component';
+import { DashboardComponent } from './ui/dashboard2/dashboard/dashboard.component';
 import { SearchComponent } from './feature/search/search.component';
 import { FormsReactiveModule } from '../shared/form-reactive.module';
-import { ShowDetailsComponent } from './ui/show-details/show-details.component';
-import { ShowListComponent } from './ui/show-list/show-list.component';
-import { SeriesComponent } from './ui/series/series.component';
-import { ShowCastListComponent } from './ui/show-cast-list/show-cast-list.component';
+import { ShowDetailsComponent } from './ui/show-detail/show-details/show-details.component';
+import { ShowListComponent } from './ui/dashboard2/show-list/show-list.component';
+import { SeriesComponent } from './ui/show-detail/series/series.component';
+import { ShowCastListComponent } from './ui/show-detail/show-cast-list/show-cast-list.component';
 
 
 @NgModule({

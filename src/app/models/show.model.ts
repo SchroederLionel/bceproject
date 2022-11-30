@@ -2,7 +2,7 @@ export interface Rating {
     average: number;
 }
  export interface Image {
-    medium: string;
+    medium?: string;
     original: string;
 }
 

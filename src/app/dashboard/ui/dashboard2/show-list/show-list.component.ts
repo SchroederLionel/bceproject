@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShowService } from '../../data-access/show.service';
+import { ShowService } from '../../../data-access/show.service';
 import { Observable } from 'rxjs';
 import { Show } from 'src/app/models/show.model';
 @Component({

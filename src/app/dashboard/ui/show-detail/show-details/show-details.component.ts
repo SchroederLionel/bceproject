@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { CastService } from '../../data-access/cast.service';
+import { CastService } from '../../../data-access/cast.service';
 
 import {Observable,Subscription,tap} from 'rxjs';
 import { CastMember } from 'src/app/models/person.model';

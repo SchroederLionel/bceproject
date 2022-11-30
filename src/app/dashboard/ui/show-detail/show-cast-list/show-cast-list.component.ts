@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import { CastMember } from 'src/app/models/person.model';
-import { CastService } from '../../data-access/cast.service';
+import { CastService } from '../../../data-access/cast.service';
 @Component({
   selector: 'app-show-cast-list',
   templateUrl: './show-cast-list.component.html',
