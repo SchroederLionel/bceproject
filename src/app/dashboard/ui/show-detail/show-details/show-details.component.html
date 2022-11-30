@@ -7,7 +7,9 @@
     <mat-icon> arrow_back</mat-icon>
   </button>
 </div>
-
+<ng-container *ngIf="show">
+  <div [innerHTML]="show.summary" class="summary"></div>
+</ng-container>
 <ng-container *ngIf="showId">
   <div class="show-container">
     <app-series [showId]="showId"></app-series>
