@@ -15,6 +15,7 @@ import { ShowCastListComponent } from './ui/show-detail/show-cast-list/show-cast
 import { FilterComponent } from './ui/show-detail/filter/filter.component';
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -25,6 +26,7 @@ import { FilterComponent } from './ui/show-detail/filter/filter.component';
     SeriesComponent,
     ShowCastListComponent,
     FilterComponent,
+
   ],
   imports: [
     CommonModule,

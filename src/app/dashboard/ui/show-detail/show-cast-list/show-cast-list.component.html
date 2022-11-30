@@ -1,5 +1,6 @@
-<div class="container2" *ngIf="casters$ | async as casts; else loading">
-  <ul class="ul-list">
+<div class="cast-container" *ngIf="casters$ | async as casts; else loading">
+  <h1>Cast</h1>
+  <ul class="horizontal-scroll">
     <li *ngFor="let cast of casts">
       <div class="container">
         <mat-card class="card">

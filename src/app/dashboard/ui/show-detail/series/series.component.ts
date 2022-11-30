@@ -22,6 +22,7 @@ export class SeriesComponent implements OnInit {
   ngOnInit(): void {
     this.series$ = this.seriesService.getSeries(this.showId).pipe(
       tap(series =>{
+        console.log(series[0]);
         this.constSeries = series;
       }),
       map((series) => {
