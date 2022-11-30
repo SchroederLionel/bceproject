@@ -1,6 +1,13 @@
-<button mat-icon-button (click)="goBack()">
-  <mat-icon> arrow_back</mat-icon>
-</button>
+<div class="top-row">
+  <ng-container *ngIf="show">
+    <h1>{{ show.name }}</h1>
+  </ng-container>
+  <span class="example-spacer"></span>
+  <button mat-icon-button (click)="goBack()">
+    <mat-icon> arrow_back</mat-icon>
+  </button>
+</div>
+
 <ng-container *ngIf="showId">
   <div class="show-container">
     <app-series [showId]="showId"></app-series>

@@ -53,7 +53,7 @@ export class ShowService {
 
     
   
-
+// Was hard stuck for the pagination does not seem to work.
   private getShows(pageNumber:number): Observable<Show[]> {
    return  this.http.get<Show[]>(`${environment.api.baseUrl}/shows?page=${pageNumber}`);
   }
@@ -62,6 +62,10 @@ export class ShowService {
     return  this.http.get<Show>(`${environment.api.baseUrl}/singlesearch/shows?q=${term}`).pipe(map(show =>[show]))
   }
 
+  public getSpecificShow(showId:number){
+    return this.http.get<Show>(`${environment.api.baseUrl}/shows/${showId}`);
+  }
+  
 
  
 

@@ -5,6 +5,7 @@ import {Observable,Subscription,tap} from 'rxjs';
 import { CastMember } from 'src/app/models/person.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Show } from 'src/app/models/show.model';
+import { ShowService } from 'src/app/dashboard/data-access/show.service';
 
 @Component({
   selector: 'app-show-details',
@@ -13,17 +14,27 @@ import { Show } from 'src/app/models/show.model';
 })
 export class ShowDetailsComponent implements OnInit, OnDestroy {
  
-  constructor(private route:ActivatedRoute,private location:Location ) { }
+  constructor(private route:ActivatedRoute,private location:Location,private showService:ShowService ) { }
   routeSubscription$?:Subscription;
   showId?: number;
-
+  show?:Show;
   ngOnInit(): void {
     this.routeSubscription$ = this.route.paramMap.subscribe(
       (params:ParamMap) => {
         const showId = Number(params.get('id'));
         this.showId = showId;  
+        // In the rush implementation. Piping takeone(1) 
+        this.showService.getSpecificShow(showId).subscribe(
+         
+          (show)=>{
+            this.show = show;
+        })
       }
     );
+
+    
+
+    
   }
 
   ngOnDestroy(): void {
